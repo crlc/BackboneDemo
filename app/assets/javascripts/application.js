@@ -16,3 +16,4 @@
 //= require backbone
 //= require todo.js
 //= require_tree ./models
+//= require_tree ./collections
