@@ -5,7 +5,7 @@ window.Todo = {
 
   initialize: function () {
     var view = new Todo.Views.TodosIndex({
-      todos: Todo.Collections.todos
+      collection: Todo.Collections.todos
     });
 
     Todo.Collections.todos.fetch({
