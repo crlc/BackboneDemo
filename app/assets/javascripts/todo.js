@@ -1,9 +1,18 @@
 window.Todo = {
   Models: {},
   Collections: {},
+  Views: {},
 
   initialize: function () {
-    // alert("WELCOME TO TODOS");
+    var view = new Todo.Views.TodosIndex({
+      todos: Todo.Collections.todos
+    });
+
+    Todo.Collections.todos.fetch({
+      success: function () {
+        $("body").append(view.render().$el);
+      }
+    });
   }
 };
 
