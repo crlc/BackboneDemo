@@ -4,15 +4,12 @@ window.Todo = {
   Views: {},
 
   initialize: function () {
+    Todo.Collections.todos.fetch();
+
     var view = new Todo.Views.TodosIndex({
       collection: Todo.Collections.todos
     });
-
-    Todo.Collections.todos.fetch({
-      success: function () {
-        $("body").append(view.render().$el);
-      }
-    });
+    $("body").append(view.$el);
   }
 };
 
