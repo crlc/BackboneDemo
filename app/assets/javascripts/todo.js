@@ -6,10 +6,13 @@ window.Todo = {
   initialize: function () {
     Todo.Collections.todos.fetch();
 
-    var view = new Todo.Views.TodosIndex({
+    var indexView = new Todo.Views.TodosIndex({
       collection: Todo.Collections.todos
     });
-    $("body").append(view.$el);
+    $("body").append(indexView.$el);
+
+    var newView = new Todo.Views.TodosNew();
+    $("body").append(newView.render().$el);
   }
 };
 
